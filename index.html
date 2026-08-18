@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<nav>
+<nav class="reveal">
   <a class="brand" href="index.html">
     <svg width="24" height="24" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#f7f4ee"/><circle cx="32" cy="32" r="16" fill="none" stroke="#9a5b3c" stroke-width="4"/></svg>
     <span class="serif">NORN</span>
@@ -28,17 +28,25 @@
 </nav>
 
 <header class="hero">
-  <div class="wrap">
+  <div class="aurora-webgl" data-stops="#e9d9c2,#f7f2ea,#ddc2a4" data-amplitude="1.1" data-blend="0.45" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
     <div>
-      <div class="kicker">Quiet objects · everyday living</div>
-      <h1>Made slowly, used every day</h1>
-      <p>Small-batch ceramics, linen and kitchen goods with a calm Nordic mood. Honest materials, no shortcuts, priced fairly.</p>
+      <div class="kicker hero-kicker">Quiet objects · everyday living</div>
+      <h1 class="hero-title">
+        <span class="w"><span class="c">Made</span></span>
+        <span class="w"><span class="c">slowly,</span></span>
+        <span class="w"><span class="c">used</span></span>
+        <span class="w"><span class="c">every</span></span>
+        <span class="w"><span class="c">day</span></span>
+      </h1>
+      <p class="hero-sub">Small-batch ceramics, linen and kitchen goods with a calm Nordic mood. Honest materials, no shortcuts, priced fairly.</p>
       <div class="hero-actions">
         <a class="cta" href="index.html#shop">Shop the collection</a>
         <span class="hero-note">Free shipping over $60</span>
       </div>
     </div>
-    <div class="hero-visual">
+    <div class="hero-visual reveal-img">
       <img src="img/hero.jpg" alt="NORN home interior with linen bedding">
       <span class="cap">NORN studio, spring 2026</span>
     </div>
@@ -47,13 +55,13 @@
 
 <section id="shop">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head reveal">
       <div class="kicker">Shop · the collection</div>
       <h2>Objects with nothing to hide</h2>
       <p>Each piece is made in small batches, checked by hand, and built to earn a permanent place in your home.</p>
     </div>
     <div class="grid-3">
-      <div class="product">
+      <div class="product reveal">
         <div class="photo"><img src="img/mug.jpg" alt="Stoneware mug with coffee"></div>
         <div class="body">
           <h3>Stoneware Mug · Oat</h3>
@@ -61,7 +69,7 @@
           <div class="price"><b>$24</b><a class="btn-sm" href="contact.html">Order</a></div>
         </div>
       </div>
-      <div class="product">
+      <div class="product reveal">
         <div class="photo"><img src="img/cushion.jpg" alt="Linen cushions on a sofa"></div>
         <div class="body">
           <h3>Linen Cushion Set · Sand</h3>
@@ -69,7 +77,7 @@
           <div class="price"><b>$89</b><a class="btn-sm" href="contact.html">Order</a></div>
         </div>
       </div>
-      <div class="product">
+      <div class="product reveal">
         <div class="photo"><img src="img/bowls.jpg" alt="Stoneware serving bowl"></div>
         <div class="body">
           <h3>Stoneware Serving Bowl</h3>
@@ -77,7 +85,7 @@
           <div class="price"><b>$46</b><a class="btn-sm" href="contact.html">Order</a></div>
         </div>
       </div>
-      <div class="product">
+      <div class="product reveal">
         <div class="photo"><img src="img/lamp.jpg" alt="Oak floor lamp in a living room"></div>
         <div class="body">
           <h3>Oak Floor Lamp · Warm Light</h3>
@@ -85,7 +93,7 @@
           <div class="price"><b>$39</b><a class="btn-sm" href="contact.html">Order</a></div>
         </div>
       </div>
-      <div class="product">
+      <div class="product reveal">
         <div class="photo"><img src="img/vase.jpg" alt="Minimal ceramic vase"></div>
         <div class="body">
           <h3>Ceramic Vase · Curve</h3>
@@ -93,7 +101,7 @@
           <div class="price"><b>$32</b><a class="btn-sm" href="contact.html">Order</a></div>
         </div>
       </div>
-      <div class="product">
+      <div class="product reveal">
         <div class="photo"><img src="img/story.jpg" alt="Curated calm living room interior"></div>
         <div class="body">
           <h3>The Calm Starter Kit</h3>
@@ -105,19 +113,19 @@
   </div>
 </section>
 
-<section style="padding-top:0">
+<section class="mesh-band" style="padding-top:0">
   <div class="wrap">
     <div class="feats">
-      <div class="feat"><b>Small batches</b><p>We make in runs, not warehouses. When a batch sells out, the next one comes when it is ready.</p></div>
-      <div class="feat"><b>Honest materials</b><p>Stoneware, European flax, solid oak. We name the material on every page.</p></div>
-      <div class="feat"><b>Fair pricing</b><p>No fake discounts, no inflated retail. The price is the price.</p></div>
+      <div class="feat reveal"><b>Small batches</b><p>We make in runs, not warehouses. When a batch sells out, the next one comes when it is ready.</p></div>
+      <div class="feat reveal"><b>Honest materials</b><p>Stoneware, European flax, solid oak. We name the material on every page.</p></div>
+      <div class="feat reveal"><b>Fair pricing</b><p>No fake discounts, no inflated retail. The price is the price.</p></div>
     </div>
   </div>
 </section>
 
 <section id="story" class="band" style="padding-top:0">
   <div class="wrap">
-    <div>
+    <div class="reveal">
       <div class="kicker">Our story</div>
       <h2>Quiet objects for loud lives</h2>
       <p>NORN started with a simple belief: the things you touch every day should be worth touching. We work with small studios in Europe and Asia, choose materials that age well, and keep the collection small on purpose.</p>
@@ -129,13 +137,13 @@
       </ul>
       <a class="cta" href="contact.html">Write to us</a>
     </div>
-    <div class="visual"><img src="img/lounge.jpg" alt="NORN lounge with yellow armchair"></div>
+    <div class="visual reveal-img"><img src="img/lounge.jpg" alt="NORN lounge with yellow armchair"></div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="contact-block">
+    <div class="contact-block reveal">
       <div class="kicker">Contact</div>
       <h2>Find the piece that stays</h2>
       <p>Questions about materials, sizes or restocks? We reply within 24 hours.</p>
@@ -150,5 +158,23 @@
     <div><a href="index.html">Home</a> · <a href="index.html#shop">Shop</a> · <a href="contact.html">Contact</a> · <a href="mailto:2096243628@qq.com">2096243628@qq.com</a></div>
   </div>
 </footer>
+<script src="aurora.js"></script>
+<script>
+(function () {
+  'use strict';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduced) {
+    document.querySelectorAll('.hero-title .c').forEach(function (c, i) {
+      c.style.animationDelay = (0.25 + i * 0.09) + 's';
+    });
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-img').forEach(function (el) { io.observe(el); });
+})();
+</script>
 </body>
 </html>

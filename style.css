@@ -115,3 +115,77 @@ footer a { color: var(--ink); text-decoration: none; }
 @media (max-width: 560px) {
   .grid-3, .feats { grid-template-columns: 1fr; }
 }
+
+/* ══ 动态 hero：Aurora 背景 + 逐字标题 ══ */
+.hero { background: #f5f0e7; }
+.hero .aurora-webgl { position: absolute; inset: 0; z-index: 0; }
+.hero-inner { position: relative; z-index: 1; }
+.hero-grain {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.18 0 0 0 0 0.14 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.hero-kicker { opacity: 0; animation: heroFade 0.8s cubic-bezier(.16,1,.3,1) forwards; animation-delay: .1s; }
+.hero-title .w { display: inline-block; }
+.hero-title .c {
+  display: inline-block; opacity: 0; filter: blur(10px); transform: translateY(18px);
+  animation: heroWord 0.9s cubic-bezier(.16,1,.3,1) forwards;
+}
+.hero-title .w + .w { margin-left: .24em; }
+@keyframes heroWord { to { opacity: 1; filter: blur(0); transform: translateY(0); } }
+.hero-sub { opacity: 0; animation: heroFade 1s cubic-bezier(.16,1,.3,1) forwards; animation-delay: .75s; }
+.hero-actions { opacity: 0; animation: heroFade 1s cubic-bezier(.16,1,.3,1) forwards; animation-delay: .95s; }
+@keyframes heroFade { to { opacity: 1; } }
+.hero-visual img { transition: transform 1.4s cubic-bezier(.16,1,.3,1), opacity 1s; }
+.hero-visual.reveal-img { opacity: 0; transform: translateY(26px) scale(1.04); }
+.hero-visual.reveal-img.in { opacity: 1; transform: none; }
+.hero-visual.reveal-img.in img { transform: scale(1.02); }
+
+/* ══ 滚动显现（ScrollReveal 风格）══ */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+.reveal.in { opacity: 1; transform: none; }
+.reveal-img { opacity: 0; transform: translateY(28px) scale(1.03); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+.reveal-img.in { opacity: 1; transform: none; }
+
+/* ══ 产品卡升级：hover 图片放大 + 3D 倾斜 + 阴影 ══ */
+.product { transform-style: preserve-3d; transition: transform .24s cubic-bezier(.16,1,.3,1), border-color .24s, box-shadow .24s; }
+.product:hover { transform: translateY(-6px) rotateX(2deg) rotateY(-2deg); border-color: rgba(154,91,60,.45); box-shadow: 0 26px 54px -28px rgba(38,36,31,.4); }
+.product .photo { position: relative; overflow: hidden; }
+.product .photo img { transition: transform .7s cubic-bezier(.16,1,.3,1); }
+.product:hover .photo img { transform: scale(1.07); }
+.product .photo::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.28), transparent 62%);
+  opacity: 0; transition: opacity .3s;
+}
+.product:hover .photo::after { opacity: 1; }
+
+/* ══ 网格渐变区（Mesh Gradient）══ */
+.mesh-band {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(46% 80% at 12% 50%, rgba(154,91,60,.14), transparent 60%),
+    radial-gradient(42% 70% at 88% 30%, rgba(180,150,110,.18), transparent 62%),
+    radial-gradient(50% 90% at 55% 100%, rgba(120,140,120,.14), transparent 65%),
+    linear-gradient(180deg, #f7f4ee, #f2ecdf);
+}
+.feat { transition: transform .22s, box-shadow .22s; }
+.feat:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -26px rgba(38,36,31,.35); }
+
+/* ══ 故事区视觉增强 ══ */
+.band .visual { overflow: hidden; }
+.band .visual img { transition: transform .8s cubic-bezier(.16,1,.3,1); }
+.band .visual:hover img { transform: scale(1.04); }
+
+/* ══ 联系块轻微玻璃化 ══ */
+.contact-block { position: relative; overflow: hidden; }
+.contact-block::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(60% 100% at 50% 0%, rgba(154,91,60,.1), transparent 60%);
+}
+.contact-block > * { position: relative; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title .c, .hero-kicker, .hero-sub, .hero-actions { opacity: 1; filter: none; transform: none; animation: none; }
+  .reveal, .reveal-img { opacity: 1; transform: none; transition: none; }
+  .product:hover { transform: none; }
+}
