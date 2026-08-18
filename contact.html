@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — NORN HOME</title>
+<meta name="description" content="Contact NORN HOME: order help, material questions and restock requests.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23f7f4ee'/><circle cx='32' cy='32' r='16' fill='none' stroke='%239a5b3c' stroke-width='4'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">
+    <svg width="24" height="24" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#f7f4ee"/><circle cx="32" cy="32" r="16" fill="none" stroke="#9a5b3c" stroke-width="4"/></svg>
+    <span class="serif">NORN</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#shop">Shop</a>
+    <a href="index.html#story">Our story</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a class="cta" href="mailto:2096243628@qq.com">Email us</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="kicker">Contact</div>
+    <h1>We reply within 24 hours</h1>
+    <p>Order help, material questions, restock requests. Tell us what you need.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <form class="form" onsubmit="return sendMail(event)">
+      <label>Your name <input type="text" id="n" required placeholder="Name"></label>
+      <label>Your email <input type="email" id="e" required placeholder="you@example.com"></label>
+      <label>Topic
+        <select id="t">
+          <option>Order help</option>
+          <option>Product question</option>
+          <option>Restock request</option>
+          <option>Wholesale / press</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label>Message <textarea id="m" required placeholder="How can we help?"></textarea></label>
+      <button class="cta" type="submit">Send message</button>
+      <p style="color:var(--muted);font-size:13px">Opens your email app with everything prefilled, or write to 2096243628@qq.com directly.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 NORN HOME · Quiet objects for everyday living</div>
+    <div><a href="index.html">Home</a> · <a href="index.html#shop">Shop</a> · <a href="mailto:2096243628@qq.com">2096243628@qq.com</a></div>
+  </div>
+</footer>
+
+<script>
+function sendMail(ev) {
+  ev.preventDefault();
+  var n = document.getElementById('n').value;
+  var e = document.getElementById('e').value;
+  var t = document.getElementById('t').value;
+  var m = document.getElementById('m').value;
+  var body = encodeURIComponent('Name: ' + n + '\nEmail: ' + e + '\nTopic: ' + t + '\n\n' + m);
+  window.location.href = 'mailto:2096243628@qq.com?subject=' + encodeURIComponent('NORN HOME inquiry - ' + t) + '&body=' + body;
+  return false;
+}
+</script>
+</body>
+</html>
